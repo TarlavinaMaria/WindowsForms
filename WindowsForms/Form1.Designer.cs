@@ -38,6 +38,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(29, 48);
             this.label1.Name = "label1";
@@ -56,20 +57,21 @@
             // cbShowDate
             // 
             this.cbShowDate.AutoSize = true;
+            this.cbShowDate.BackColor = System.Drawing.SystemColors.Control;
             this.cbShowDate.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbShowDate.Location = new System.Drawing.Point(42, 283);
             this.cbShowDate.Name = "cbShowDate";
             this.cbShowDate.Size = new System.Drawing.Size(167, 40);
             this.cbShowDate.TabIndex = 1;
             this.cbShowDate.Text = "Show date";
-            this.cbShowDate.UseVisualStyleBackColor = true;
+            this.cbShowDate.UseVisualStyleBackColor = false;
             this.cbShowDate.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.cbShowDate);
             this.Controls.Add(this.label1);

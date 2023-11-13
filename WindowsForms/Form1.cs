@@ -35,5 +35,6 @@ namespace WindowsForms
             this.ShowInTaskbar = true;
             this.cbShowDate.Visible = true;
         }
+
     }
 }
