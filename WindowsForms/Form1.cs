@@ -117,7 +117,7 @@ namespace WindowsForms
 
         private void btnFont_Click(object sender, EventArgs e)
         {
-            Font font = new Font();
+            Font font = new Font(label1.Font);
             font.ShowDialog(this);
             label1.Font = font.OldFont;
         }
