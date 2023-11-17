@@ -28,7 +28,9 @@ namespace WindowsForms
             {
                 if(i.Split('\\').Last().Contains(".ttf"))this.cbFont.Items.Add(i.Split('\\').Last());
             }
+            cbFont.SelectedIndex = 0;
             OldFont = oldFont;
+            lblExample.Font = oldFont;
             numericUpDownFontSize.Value = (decimal)OldFont.Size;
             //MessageBox.Show(this, oldFont.Name, "Font", MessageBoxButtons.OK);
 
@@ -52,6 +54,11 @@ namespace WindowsForms
             NewFont = new System.Drawing.Font(pfs.Families[0], (int)numericUpDownFontSize.Value);
             //NewFont = new System.Drawing.Font(pfs.Families[0], lblExample.Font.Size);
             lblExample.Font = NewFont;
+        }
+
+        private void numericUpDownFontSize_ValueChanged(object sender, EventArgs e)
+        {
+            comboBox1_SelectionChangeCommitted(sender, e);
         }
     }
 }
