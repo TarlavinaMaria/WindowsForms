@@ -10,11 +10,11 @@ using System.Windows.Forms;
 using System.IO;
 using System.Drawing.Text;
 
-
 namespace WindowsForms
 {
     public partial class Font : Form
     {
+        public string FontFile { get; set; }
         public System.Drawing.Font NewFont { get; set; }
         public System.Drawing.Font OldFont { get; set; }
         public Font(System.Drawing.Font oldFont)
@@ -26,14 +26,18 @@ namespace WindowsForms
             //MessageBox.Show(this, currectDirectory, "Current directory", MessageBoxButtons.OK);
             foreach (string i in Directory.GetFiles(currectDirectory))
             {
-                if(i.Split('\\').Last().Contains(".ttf"))this.cbFont.Items.Add(i.Split('\\').Last());
+                if (i.Split('\\').Last().Contains(".ttf")) this.cbFont.Items.Add(i.Split('\\').Last());
+                if (i.Split('\\').Last().Contains(".TTF")) this.cbFont.Items.Add(i.Split('\\').Last());
             }
             cbFont.SelectedIndex = 0;
             OldFont = oldFont;
-            lblExample.Font = oldFont;
+            lblExample.Font = OldFont;
             numericUpDownFontSize.Value = (decimal)OldFont.Size;
-            //MessageBox.Show(this, oldFont.Name, "Font", MessageBoxButtons.OK);
-
+            //MessageBox.Show(this, OldFont.Name, "Font", MessageBoxButtons.OK);
+        }
+        public int GetFontSize()
+        {
+            return (int)numericUpDownFontSize.Value;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -44,6 +48,7 @@ namespace WindowsForms
         private void btnOK_Click(object sender, EventArgs e)
         {
             OldFont = NewFont;
+            FontFile = cbFont.SelectedItem.ToString();
             this.Close();
         }
 
